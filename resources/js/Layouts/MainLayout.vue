@@ -7,7 +7,7 @@ import { Link } from '@inertiajs/vue3'
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#">Požičovňa kníh</a>
-                <div class="collapse navbar-collapse">
+                <div>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
                             <Link class="nav-link" :href="route('authors.index')">Autori</Link>

@@ -91,13 +91,13 @@ function openDeleteModal(author) {
                 <button type="button" class="btn btn-outline-secondary" @click="resetFilters">Reset</button>
             </div>
         </form>
-        
+
         <div class="table-responsive">
             <table class="table table-bordered table-striped align-middle">
                 <thead>
                 <tr>
-                    <th @click="sort('name')" class="cursor-pointer">Meno <SortIcon :field="'name'" :sort="sort" /></th>
-                    <th @click="sort('surname')" class="cursor-pointer">Priezvisko <SortIcon :field="'surname'" :sort="sort" /></th>
+                    <th @click="sort('name')" class="cursor-pointer">Meno <SortIcon field="name" :sort="sortState" /></th>
+                    <th @click="sort('surname')" class="cursor-pointer">Priezvisko <SortIcon field="surname" :sort="sortState" /></th>
                     <th>Počet kníh</th>
                     <th></th>
                 </tr>
