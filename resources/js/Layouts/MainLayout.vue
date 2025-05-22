@@ -1,12 +1,13 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
+import FlashMessage from "@/Components/Organism/FlashMessage.vue";
 </script>
 
 <template>
     <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#">Požičovňa kníh</a>
+                <a class="navbar-brand" href="/">Požičovňa kníh</a>
                 <div>
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
@@ -21,6 +22,7 @@ import { Link } from '@inertiajs/vue3'
         </nav>
 
         <main class="container py-4">
+            <FlashMessage />
             <slot />
         </main>
     </div>

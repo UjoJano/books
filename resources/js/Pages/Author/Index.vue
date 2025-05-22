@@ -123,5 +123,11 @@ function openDeleteModal(author) {
 
     <ModalAuthorCreate :show="showModal" @close="showModal = false" />
     <ModalAuthorEdit :author="editingAuthor" @close="editingAuthor = null" />
-    <ModalConfirmDelete :author="deletingAuthor" @close="deletingAuthor = null" />
+    <ModalConfirmDelete
+        :model="deletingAuthor"
+        routeName="authors.destroy"
+        title="Vymazanie autora"
+        :description="`Chceš naozaj vymazať autora ${deletingAuthor?.name} ${deletingAuthor?.surname}?`"
+        @close="deletingAuthor = null"
+    />
 </template>
