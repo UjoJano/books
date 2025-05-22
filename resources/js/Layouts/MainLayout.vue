@@ -1,0 +1,27 @@
+<script setup>
+import { Link } from '@inertiajs/vue3'
+</script>
+
+<template>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Požičovňa kníh</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <Link class="nav-link" :href="route('authors.index')">Autori</Link>
+                        </li>
+                        <li class="nav-item">
+                            <Link class="nav-link" :href="route('books.index')">Knihy</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="container py-4">
+            <slot />
+        </main>
+    </div>
+</template>
