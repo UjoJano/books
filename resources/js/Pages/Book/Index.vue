@@ -152,9 +152,3 @@ function toggleBorrowed(id) {
         />
     </div>
 </template>
-
-<style scoped>
-.cursor-pointer {
-    cursor: pointer;
-}
-</style>

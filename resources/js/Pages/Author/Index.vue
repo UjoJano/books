@@ -9,7 +9,6 @@ import ModalAuthorEdit from "@/Components/Organism/ModalAuthorEdit.vue";
 import ModalConfirmDelete from "@/Components/Organism/ModalConfirmDelete.vue";
 defineOptions({ layout: MainLayout })
 
-
 const props = defineProps({
     authors: Object,
     filters: Object,

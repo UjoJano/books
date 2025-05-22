@@ -1,3 +1,34 @@
+<script setup>
+import { computed } from 'vue'
+import { useForm } from '@inertiajs/vue3'
+
+const props = defineProps({ show: Boolean })
+const emit = defineEmits(['close'])
+
+const form = useForm({
+    name: '',
+    surname: ''
+})
+
+const isFormValid = computed(() => form.name.trim().length > 0 && form.surname.trim().length > 0)
+
+function submit() {
+    if (!isFormValid.value) return
+
+    form.post(route('authors.store'), {
+        onSuccess: () => {
+            emit('close')
+            form.reset()
+        }
+    })
+}
+
+function close() {
+    emit('close')
+    form.reset()
+}
+</script>
+
 <template>
     <Teleport to="body">
         <div v-if="show" class="modal fade show d-block" tabindex="-1" style="background-color: rgba(0,0,0,0.5)">
@@ -38,34 +69,3 @@
         </div>
     </Teleport>
 </template>
-
-<script setup>
-import { computed } from 'vue'
-import { useForm } from '@inertiajs/vue3'
-
-const props = defineProps({ show: Boolean })
-const emit = defineEmits(['close'])
-
-const form = useForm({
-    name: '',
-    surname: ''
-})
-
-const isFormValid = computed(() => form.name.trim().length > 0 && form.surname.trim().length > 0)
-
-function submit() {
-    if (!isFormValid.value) return
-
-    form.post(route('authors.store'), {
-        onSuccess: () => {
-            emit('close')
-            form.reset()
-        }
-    })
-}
-
-function close() {
-    emit('close')
-    form.reset()
-}
-</script>
